@@ -202,8 +202,6 @@ class TemplateController(EventEmitter):
 
         def _sim_ij(cj):
             # Templates of the cluster.
-            if cj < self.model.n_templates:
-                return float(sims[cj])
             temp_j = np.nonzero(self.get_template_counts(cj))[0]
             return float(np.max(sims[temp_j]))
 
